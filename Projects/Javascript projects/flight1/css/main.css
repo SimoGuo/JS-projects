@@ -1,0 +1,132 @@
+
+body {
+	width: 80vw;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(5, auto);
+	
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Page banner styling, set to apper on the top row */
+.pg-banner {
+	grid-row: 1/2;
+	grid-column: 1/-1;
+	border-bottom: 5px solid steelblue;
+}
+.header-container {
+	padding: 0 0.5em;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* Page footer styling, set to apper on the bottom row */
+.pg-footer {
+	padding: 0 0.5em;
+	grid-row: -3/-2;
+	grid-column: 1/-1;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	border-top: 1px solid gold;
+	font-size: smaller;
+}
+
+/* Navigation elements - primary (main nav in the banner), secondary (smaller nav in the banner) and footer nav. */
+.primary-nav {
+	display: flex;
+}
+.primary-nav > a {
+	margin: 0 0 0 1em;
+	color: steelblue;
+	text-decoration: none;
+}
+.primary-nav > a:hover,
+.primary-nav > a:active {
+	color: maroon;
+}
+
+.footer-nav {
+	display: flex;
+}
+.footer-nav > a {
+	margin: 0 0 0 1em;
+	color: steelblue;
+	text-decoration: none;
+}
+.footer-nav > a:hover,
+.footer-nav > a:active {
+	color: maroon;
+}
+
+
+/* Main content container to include all the flights */
+.container {
+	margin: 10px;
+	min-height: 300px;
+
+	grid-column: 1/5;
+
+	/* Add your styles for the Main container here */
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	grid-row-gap: 10px;
+	grid-column-gap: 18px;
+}
+
+
+/* Flight "bag" styling */
+.flights-selection-bag {
+	background-color: rgb(25,61,111);
+	color: lightblue;
+}
+
+/* Flight info boxes settings */
+.flight-info {
+	background-color: rgb(34,75,112);
+	color: lightblue;
+}
+.flight-availability-info {
+	background-color: lightblue;
+	text-align: center;
+	border: 4px double steelblue;
+}
+.flight-availability-info ul{
+	text-align: left;
+	font-size: 11pt;
+}
+.flight-availability-info p{
+	font-size: 11pt;
+	font-style: italic;
+	margin: 0;
+}
+.flight-availability-info h2{
+	font-size: 15pt;
+}
+.stops-and-time{
+	color: rgb(34,75,112);
+}
+/*Create a responsive page which breakpoint is 840px*/
+@media screen and (max-width: 840px){
+	.container{
+		grid-template-columns: repeat(1,1fr);
+	}
+	header a{
+		display: none;
+	}
+	.pg-footer{
+		display: block;
+	}
+	footer a{
+		display: none;
+	}
+	footer p{
+		margin-left: 135px;
+	}
+}
+
